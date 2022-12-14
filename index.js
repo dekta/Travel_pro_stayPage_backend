@@ -9,7 +9,7 @@ const {connect} = require("./config/db")
 const {AdminModel} = require("./models/admin.model")
 const {authenticate} = require("./middleware/authentication")
 const {hotelRouter} = require("./routes/hotel.route")
- 
+const {HotelModel} = require("./models/hotel.model")
 
 app.use(express.json());
 app.use(cors({
@@ -18,6 +18,11 @@ app.use(cors({
 
 app.get("/",(req,res)=>{
     res.send("welcome")
+})
+
+app.get("/hotels",async(req,res)=>{
+    const data = await HotelModel.find()
+    res.send(data)
 })
 
 app.post("/signup", async(req,res)=>{
