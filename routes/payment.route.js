@@ -1,6 +1,12 @@
 const express = require("express");
 const {PaymentModel} = require("../models/payment.model")
 const bcrypt = require("bcrypt");
+const cors = require("cors");
+
+const app1 = express()
+app1.use(cors({
+    origin:"*"
+}))
 
 const paymentRouter = express.Router();
 
