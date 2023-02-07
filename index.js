@@ -29,7 +29,7 @@ app.get("/hotels",async(req,res)=>{
 })
 
 //get by city
-hotelRouter.get("/search",async(req,res)=>{
+app.get("/search",async(req,res)=>{
     const q = req.query
     console.log(q)
     try{
