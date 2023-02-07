@@ -32,7 +32,7 @@ app.get("/hotels",async(req,res)=>{
 app.get("/search",async(req,res)=>{
     const q = req.query
     console.log(q)
-    res.send(q)
+    //res.send(q)
     try{
         let data = await HotelModel.find({"city":{$regex: '^' + q.city, $options: 'i'}})
         console.log("done")
