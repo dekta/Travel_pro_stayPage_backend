@@ -144,7 +144,7 @@ app.post("/user/login",async(req,res)=>{
 app.use(authenticate_admin);
 app.use("/admin/hotel", hotelRouter)
 
-app.listen(process.env.PORT,async()=>{
+app.listen(9050,async()=>{
     try{
         await connect
         console.log("hotel server")
